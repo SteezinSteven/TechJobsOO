@@ -21,8 +21,9 @@ namespace TechJobs.Controllers
         
         public IActionResult Index(int id )
         {
-
-            if (jobData.Find(id) != null) 
+            
+            if (jobData.Find(id) != null)
+           
             
             { Job singleJob = jobData.Find(id);
 
@@ -66,8 +67,8 @@ namespace TechJobs.Controllers
                     PositionType = jobData.PositionTypes.Find(newJobViewModel.PositionTypeID)
                 };
                 jobData.Jobs.Add(newJob);
-                
-                return Redirect("Index");
+
+                return Redirect("/job?id=" + newJob.ID);
                 
             }
             // TODO #6 - Validate the ViewModel and if valid, create a 
